@@ -1,0 +1,4 @@
+.git
+log.txt
+Seminar1
+Seminar2
