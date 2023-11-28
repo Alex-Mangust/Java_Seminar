@@ -1,4 +1,6 @@
-class Answer {
+package HomeworkSem1;
+
+class AnswerTwo {
     public void printPrimeNums() {
         // Напишите свое решение ниже
         for (int i = 1; i < 100; i++) {
@@ -17,7 +19,7 @@ class Answer {
 public class Problem2 {
     public static void main(String[] args) {
 
-        Answer ans = new Answer();
+        AnswerTwo ans = new AnswerTwo();
         ans.printPrimeNums();
     }
 }

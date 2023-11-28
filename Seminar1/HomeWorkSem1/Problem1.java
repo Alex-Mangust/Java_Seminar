@@ -1,3 +1,6 @@
+package HomeworkSem1;
+// package Seminar1.HomeworkSem1;
+
 class Answer {
     public int countNTriangle(int n){
       // Введите свое решение ниже

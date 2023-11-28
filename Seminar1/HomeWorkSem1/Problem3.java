@@ -1,3 +1,4 @@
+package HomeworkSem1;
 class Calculator {
     public int calculate(char op, int a, int b) {
       // Введите свое решение ниже
