@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 class NamesCounter {
@@ -29,21 +30,32 @@ class NamesCounter {
                 this.names.put(count.get(i), countName);
             }
         }
+        // StringBuilder result = new StringBuilder();
+        // result.append("{");
+        // for (String key : names.keySet()) {
+        //     result.append(key);
+        //     result.append("=");
+        //     result.append(names.get(key));
+        //     result.append(", ");
+        // }
+        // if (result.charAt(result.length()-2) == ',') {
+        //     result.setLength(result.length()-1);
+        //     result.setLength(result.length()-1);
+        //     result.append("}");
+        // } 
+        // System.out.println(result.toString());
         StringBuilder result = new StringBuilder();
         result.append("{");
         for (String key : names.keySet()) {
-            result.append(key);
-            result.append("=");
-            result.append(names.get(key));
+            result.append(String.format("%s = %s", key, String.valueOf(names.get(key))));
             result.append(", ");
         }
-        if (result.charAt(result.length()-2) == ',') {
-            result.setLength(result.length()-1);
-            result.setLength(result.length()-1);
+        if (result.charAt(result.length() - 1) == ' ' && result.charAt(result.length() - 2) == ',') {
+            result.setLength(result.length() - 1);
+            result.setLength(result.length() - 1);
             result.append("}");
-        } 
+        }
         System.out.println(result.toString());
-
         
     }
 }
