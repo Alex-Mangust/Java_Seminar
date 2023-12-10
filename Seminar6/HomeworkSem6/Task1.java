@@ -20,212 +20,26 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Scanner;
-
-class Laptop {
-
-    String firm;
-    String CPU;
-    String videoCard;
-    String color;
-    String countryOfManufacture;
-    String operatingSystem;
-    int RAM;
-    int hardDrive;
-    double screenDiagonal;
-    double battery;
-    int yearOfManufacture;
-    int price;
-    String model;
-
-    Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM,
-            int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, int price,
-            String operatingSystem) {
-        this.firm = firm;
-        this.CPU = CPU;
-        this.videoCard = videoCard;
-        this.color = color;
-        this.countryOfManufacture = countryOfManufacture;
-        this.RAM = RAM;
-        this.model = model;
-        this.hardDrive = hardDrive;
-        this.screenDiagonal = screenDiagonal;
-        this.battery = battery;
-        this.yearOfManufacture = yearOfManufacture;
-        this.price = price;
-        this.operatingSystem = operatingSystem;
-    }
-
-    Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM,
-            int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, int price) {
-        this.firm = firm;
-        this.CPU = CPU;
-        this.videoCard = videoCard;
-        this.color = color;
-        this.countryOfManufacture = countryOfManufacture;
-        this.RAM = RAM;
-        this.model = model;
-        this.hardDrive = hardDrive;
-        this.screenDiagonal = screenDiagonal;
-        this.battery = battery;
-        this.yearOfManufacture = yearOfManufacture;
-        this.price = price;
-        this.operatingSystem = "Не установлена";
-    }
-
-    public String getFirm() {
-        return firm;
-    }
-
-    public String getCPU() {
-        return CPU;
-    }
-
-    public String getVideoCard() {
-        return videoCard;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String getCountryOfManufacture() {
-        return countryOfManufacture;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getRAM() {
-        return RAM;
-    }
-
-    public int getHardDrive() {
-        return hardDrive;
-    }
-
-    public double getScreenDiagonal() {
-        return screenDiagonal;
-    }
-
-    public double getBattery() {
-        return battery;
-    }
-
-    public int getYearOfManufacture() {
-        return yearOfManufacture;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public String getOperatingSystem() {
-        return operatingSystem;
-    }
-
-    public void setFirm(String firm) {
-        this.firm = firm;
-    }
-
-    public void setCPU(String CPU) {
-        this.CPU = CPU;
-    }
-
-    public void setVideoCard(String videoCard) {
-        this.videoCard = videoCard;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setCountryOfManufacture(String countryOfManufacture) {
-        this.countryOfManufacture = countryOfManufacture;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setRAM(int RAM) {
-        this.RAM = RAM;
-    }
-
-    public void setHardDrive(int hardDrive) {
-        this.hardDrive = hardDrive;
-    }
-
-    public void setScreenDiagonal(double screenDiagonal) {
-        this.screenDiagonal = screenDiagonal;
-    }
-
-    public void setBattery(int battery) {
-        this.battery = battery;
-    }
-
-    public void setYearOfManufacture(int yearOfManufacture) {
-        this.yearOfManufacture = yearOfManufacture;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
-    }
-
-    @Override
-    public String toString() {
-        return "Ноутбук - " + model + "\n"
-                + "Фирма - " + firm + "\n"
-                + "Процессор - " + CPU + "\n"
-                + "Видеокарта - " + videoCard + "\n"
-                + "Цвет - " + color + "\n"
-                + "Страна изготовления - " + countryOfManufacture + "\n"
-                + "Оперативная память - " + RAM + " гб.\n"
-                + "Объем жесткого диска - " + hardDrive + " гб.\n"
-                + "Диагональ экрана - " + screenDiagonal + " д.\n"
-                + "Батарея - " + battery + " Вт*ч\n"
-                + "Год изготовления - " + yearOfManufacture + " г.\n"
-                + "Операционная система - " + operatingSystem + "\n"
-                + "Цена - " + price + "р.";
-    }
-
-    @Override
-    public boolean equals(Object l) {
-        if (this == l) {
-            return true;
-        }
-        if (l == null || getClass() != l.getClass()) {
-            return false;
-        }
-        Laptop laptop = (Laptop) l;
-        return firm.equals(laptop.firm) &&
-                CPU.equals(laptop.CPU) &&
-                videoCard.equals(laptop.videoCard) &&
-                color.equals(laptop.color) &&
-                countryOfManufacture.equals(laptop.countryOfManufacture) &&
-                RAM == laptop.RAM &&
-                hardDrive == laptop.hardDrive &&
-                screenDiagonal == laptop.screenDiagonal &&
-                battery == laptop.battery &&
-                yearOfManufacture == laptop.yearOfManufacture &&
-                price == laptop.price &&
-                operatingSystem.equals(laptop.operatingSystem);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firm, CPU, videoCard, color, countryOfManufacture, RAM, hardDrive, screenDiagonal, battery,
-                yearOfManufacture, price, operatingSystem);
-    }
-}
+import Seminar6.HomeworkSem6.Laptop;
 
 public class Task1 {
+    public static Map<Integer, String> redactCriteria(Map<Integer, String> criterias, int del) {
+        Map<Integer, String> criteriasNew = new HashMap<>();
+        boolean findDel = false;
+        for (int i = 1; i < criterias.size(); i++) {
+            if (i == del) {
+                findDel = true;
+            }
+            if (!findDel) {
+                criteriasNew.put(i, criterias.get(i));
+            } else {
+                criteriasNew.put(i, criterias.get(i+1));
+            }
+        }
+
+        return criteriasNew;
+    }
     public static void main(String[] args) {
         Laptop laptop1 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China",
                 "DEXP Aquilon", 8, 128, 14.1, 37, 2022, 20199, "Windows 11 Pro");
@@ -253,8 +67,9 @@ public class Task1 {
                 laptop6, laptop7, laptop8, laptop9, laptop10));
         Scanner choiceSc = new Scanner(System.in);
         Scanner findUse = new Scanner(System.in);
-        Scanner choiseScTwo = new Scanner(System.in);
+        Scanner choiseTwo = new Scanner(System.in);
         Scanner getError = new Scanner(System.in);
+        Scanner next = new Scanner(System.in);
         boolean choiceError = true;
         int countFind = 0;
         Map<Integer, String> criterias = new HashMap<Integer, String>();
@@ -271,14 +86,20 @@ public class Task1 {
         criterias.put(11, "Год изготовления");
         criterias.put(12, "Операционная система");
         criterias.put(13, "Цена");
+        HashSet<Laptop> laptopsFind = new HashSet<>();
         while (choiceError) {
+            if (!laptopsFind.isEmpty()) {
+                laptops = laptopsFind;
+                laptopsFind = new HashSet<>();
+            }
             System.out.println("По какому критерию хотите производить поиск?");
             for (Integer criteria : criterias.keySet()) {
                 System.out.println(criteria + " - " + criterias.get(criteria));
             }
             int choice = choiceSc.nextInt();
-            switch (choice) {
-                case 1:
+            String choiceCriteria = criterias.get(choice);
+            switch (choiceCriteria) {
+                case "Фирма":
                     System.err.println("Введите название фирмы ноутбука:");
                     String find = findUse.nextLine();
                     System.out.println();
@@ -297,15 +118,21 @@ public class Task1 {
                             }
                         }
                         if (!differend) {
-                            laptops = new HashSet<Laptop>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5,
-                laptop6, laptop7, laptop8, laptop9, laptop10));
+                            laptopsFind.add(laptop);
                             countFind++;
                         }
                     }
-                    System.out.println("Найдено резултатов - " + countFind);
-                    choiceError = false;
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    String nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 2:
+                case "Процессор":
                     System.err.println("Введите название процессора:");
                     find = findUse.nextLine();
                     System.out.println();
@@ -324,15 +151,21 @@ public class Task1 {
                             }
                         }
                         if (!differend) {
-                            System.out.println(laptop);
-                            System.out.println();
+                            laptopsFind.add(laptop);
                             countFind++;
                         }
                     }
-                    System.out.println("Найдено резултатов - " + countFind);
-                    choiceError = false;
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 3:
+                case "Видеокарта":
                     System.err.println("Введите название видеокарты:");
                     find = findUse.nextLine();
                     System.out.println();
@@ -351,15 +184,21 @@ public class Task1 {
                             }
                         }
                         if (!differend) {
-                            System.out.println(laptop);
-                            System.out.println();
+                            laptopsFind.add(laptop);
                             countFind++;
                         }
                     }
-                    System.out.println("Найдено резултатов - " + countFind);
-                    choiceError = false;
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 4:
+                case "Цвет":
                     System.err.println("Введите желаемый цвет ноутбука:");
                     find = findUse.nextLine();
                     System.out.println();
@@ -378,15 +217,21 @@ public class Task1 {
                             }
                         }
                         if (!differend) {
-                            System.out.println(laptop);
-                            System.out.println();
+                            laptopsFind.add(laptop);
                             countFind++;
                         }
                     }
-                    System.out.println("Найдено резултатов - " + countFind);
-                    choiceError = false;
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 5:
+                case "Страна изготовления":
                     System.err.println("Введите страну изготовления ноутбука:");
                     find = findUse.nextLine();
                     System.out.println();
@@ -405,15 +250,21 @@ public class Task1 {
                             }
                         }
                         if (!differend) {
-                            System.out.println(laptop);
-                            System.out.println();
+                            laptopsFind.add(laptop);
                             countFind++;
                         }
                     }
-                    System.out.println("Найдено резултатов - " + countFind);
-                    choiceError = false;
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 6:
+                case "Модель ноутбука":
                     System.err.println("Введите модель ноутбука:");
                     find = findUse.nextLine();
                     System.out.println();
@@ -432,165 +283,196 @@ public class Task1 {
                             }
                         }
                         if (!differend) {
-                            System.out.println(laptop);
-                            System.out.println();
+                            laptopsFind.add(laptop);
                             countFind++;
                         }
                     }
-                    System.out.println("Найдено резултатов - " + countFind);
-                    choiceError = false;
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                // интовые значения
-                case 7:
+                case "ОЗУ":
                     System.err.println("Введите колличество оперативной памяти:");
                     int findNum = findUse.nextInt();
+                    findUse.nextLine();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большей оперативной памятью, введите 1.");
                     System.out.println(
                             "Чтобы показать результаты с меньшей оперативной памятью, введите любое другое значение.");
-                    String choiceFind = choiseScTwo.nextLine();
+                    String choiceFind = choiseTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
                             if (laptop.getRAM() >= findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     } else {
                         for (Laptop laptop : laptops) {
                             if (laptop.getRAM() <= findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     }
-                    choiceError = false;
-                    System.out.println("Найдено резултатов - " + countFind);
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 8:
+                case "Размер жесткого диска":
                     System.err.println("Введите размер жесткого диска:");
                     findNum = findUse.nextInt();
+                    findUse.nextLine();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большим размером жесткого диска, введите 1.");
                     System.out.println(
                             "Чтобы показать результаты с меньшим размером жесткого диска, введите любое другое значение.");
-                    choiceFind = choiseScTwo.nextLine();
+                    choiceFind = choiseTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
                             if (laptop.getHardDrive() >= findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     } else {
                         for (Laptop laptop : laptops) {
                             if (laptop.getHardDrive() <= findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     }
-                    choiceError = false;
-                    System.out.println("Найдено резултатов - " + countFind);
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 9:
+                case "Диагональ экрана":
                     System.err.println("Введите диагональ:");
                     double findDouble = findUse.nextDouble();
+                    findUse.nextLine();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большим размером диагонали, введите 1.");
-                    System.out.println(
-                            "Чтобы показать результаты с меньшим размером диагонали, введите любое другое значение.");
-                    choiceFind = choiseScTwo.nextLine();
+                    System.out.println("Чтобы показать результаты с меньшим размером диагонали, введите любое другое значение.");
+                    choiceFind = choiseTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
                             if (laptop.getScreenDiagonal() >= findDouble) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     } else {
                         for (Laptop laptop : laptops) {
                             if (laptop.getScreenDiagonal() <= findDouble) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     }
-                    choiceError = false;
-                    System.out.println("Найдено резултатов - " + countFind);
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 10:
+                case "Емкость аккамулятора":
                     System.err.println("Введите емкость аккамулятора:");
                     findDouble = findUse.nextDouble();
+                    findUse.nextLine();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большей емкостью аккамулятора, введите 1.");
-                    System.out.println(
-                            "Чтобы показать результаты с меньшей емкостью аккамулятора, введите любое другое значение.");
-                    choiceFind = choiseScTwo.nextLine();
+                    System.out.println("Чтобы показать результаты с меньшей емкостью аккамулятора, введите любое другое значение.");
+                    choiceFind = choiseTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
                             if (laptop.getBattery() >= findDouble) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     } else {
                         for (Laptop laptop : laptops) {
                             if (laptop.getBattery() <= findDouble) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     }
-                    choiceError = false;
-                    System.out.println("Найдено резултатов - " + countFind);
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 11:
+                case "Год изготовления":
                     System.err.println("Введите год изготовления:");
                     findNum = findUse.nextInt();
+                    findUse.nextLine();
                     System.out.println();
                     System.out.println("Чтобы показать более новые модели, введите 1.");
                     System.out.println("Чтобы показать более старые модели, введите 2");
-                    System.out.println(
-                            "Чтобы показать модели только необходимового вам года, введите любое другое значение");
-                    choiceFind = choiseScTwo.nextLine();
+                    System.out.println("Чтобы показать модели только необходимового вам года, введите любое другое значение");
+                    choiceFind = choiseTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
                             if (laptop.getYearOfManufacture() >= findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     } else if (choiceFind.equals("2")) {
                         for (Laptop laptop : laptops) {
                             if (laptop.getYearOfManufacture() <= findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     } else {
                         for (Laptop laptop : laptops) {
                             if (laptop.getYearOfManufacture() == findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     }
-                    choiceError = false;
-                    System.out.println("Найдено резултатов - " + countFind);
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 12:
+                case "Операционная система":
                     System.err.println("Введите название операционной системы:");
                     System.out.println(
                             "(Чтобы произвести поиск всех ноутбуков без установленной операционной системой, введите null)");
@@ -604,14 +486,12 @@ public class Task1 {
                         boolean differend = false;
                         if (find.equals("all")) {
                             if (!getFind.equals("не установлена")) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         } else if (find.equals("null")) {
                             if (getFind.equals("не установлена")) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         } else {
@@ -626,42 +506,54 @@ public class Task1 {
                                 }
                             }
                             if (!differend) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
 
                     }
-                    System.out.println("Найдено резултатов - " + countFind);
-                    choiceError = false;
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
-                case 13:
+                case "Цена":
                     System.err.println("Введите цену ноутбука:");
                     findNum = findUse.nextInt();
+                    findUse.nextLine();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большим ценовым диапазоном, введите 1.");
                     System.out.println("Чтобы показать результаты с меньшим ценовым диапазоном, введите любое другое значение.");
-                    choiceFind = choiseScTwo.nextLine();
+                    choiceFind = choiseTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
                             if (laptop.getPrice() >= findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     } else {
                         for (Laptop laptop : laptops) {
                             if (laptop.getPrice() <= findNum) {
-                                System.out.println(laptop);
-                                System.out.println();
+                                laptopsFind.add(laptop);
                                 countFind++;
                             }
                         }
                     }
-                    choiceError = false;
-                    System.out.println("Найдено резултатов - " + countFind);
+                    System.out.println("Чтобы показать результаты поиска, введите 1");
+                    System.out.println("Чтобы добавить еще один критерий поиска, введите любое другое значение");
+                    nexInput = next.nextLine();
+                    if (nexInput.equals("1")) {
+                        choiceError = false;
+                    } else {
+                        criterias = redactCriteria(criterias, choice);
+                        countFind = 0;
+                    }
                     break;
                 default:
                     System.out.println("Ошибка! Пожалуйста выберите один из указанных критериев поиска!");
@@ -669,17 +561,15 @@ public class Task1 {
                     break;
             }
         }
+
+        for (Laptop laptop : laptopsFind) {
+            System.out.println(laptop);
+            System.out.println();
+        }
+        System.out.println("Найдено резултатов - " + countFind);
         getError.close();
-        choiseScTwo.close();
+        choiseTwo.close();
         choiceSc.close();
         findUse.close();
-
-        // int count = 0;
-        // for (Laptop laptop : laptops) {
-        // System.out.println(laptop);
-        // System.out.println();
-        // count++;
-        // }
-        // System.out.println(count);
     }
 }
