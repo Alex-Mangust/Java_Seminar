@@ -1,5 +1,6 @@
 package Seminar6.HomeworkSem6;
 // Подумать над структурой класса Ноутбук для магазина техники - выделить поля и
+
 // методы. Реализовать в java.
 // Создать множество ноутбуков.
 // Написать метод, который будет запрашивать у пользователя критерий (или критерии)
@@ -16,7 +17,9 @@ package Seminar6.HomeworkSem6;
 // условиям
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -33,9 +36,12 @@ class Laptop {
     double screenDiagonal;
     double battery;
     int yearOfManufacture;
+    int price;
     String model;
 
-    Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM, int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, String operatingSystem) {
+    Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM,
+            int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, int price,
+            String operatingSystem) {
         this.firm = firm;
         this.CPU = CPU;
         this.videoCard = videoCard;
@@ -47,9 +53,12 @@ class Laptop {
         this.screenDiagonal = screenDiagonal;
         this.battery = battery;
         this.yearOfManufacture = yearOfManufacture;
+        this.price = price;
         this.operatingSystem = operatingSystem;
     }
-    Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM, int hardDrive, double screenDiagonal, double battery, int yearOfManufacture) {
+
+    Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM,
+            int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, int price) {
         this.firm = firm;
         this.CPU = CPU;
         this.videoCard = videoCard;
@@ -61,42 +70,58 @@ class Laptop {
         this.screenDiagonal = screenDiagonal;
         this.battery = battery;
         this.yearOfManufacture = yearOfManufacture;
+        this.price = price;
         this.operatingSystem = "Не установлена";
     }
 
     public String getFirm() {
         return firm;
     }
+
     public String getCPU() {
         return CPU;
     }
+
     public String getVideoCard() {
         return videoCard;
     }
+
     public String getColor() {
         return color;
     }
+
     public String getCountryOfManufacture() {
         return countryOfManufacture;
     }
+
     public String getModel() {
         return model;
     }
+
     public int getRAM() {
         return RAM;
     }
+
     public int getHardDrive() {
         return hardDrive;
     }
+
     public double getScreenDiagonal() {
         return screenDiagonal;
     }
+
     public double getBattery() {
         return battery;
     }
+
     public int getYearOfManufacture() {
         return yearOfManufacture;
     }
+
+    public int getPrice() {
+        return price;
+    }
+
     public String getOperatingSystem() {
         return operatingSystem;
     }
@@ -104,36 +129,51 @@ class Laptop {
     public void setFirm(String firm) {
         this.firm = firm;
     }
+
     public void setCPU(String CPU) {
         this.CPU = CPU;
     }
+
     public void setVideoCard(String videoCard) {
         this.videoCard = videoCard;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
+
     public void setCountryOfManufacture(String countryOfManufacture) {
         this.countryOfManufacture = countryOfManufacture;
     }
+
     public void setModel(String model) {
         this.model = model;
     }
+
     public void setRAM(int RAM) {
         this.RAM = RAM;
     }
+
     public void setHardDrive(int hardDrive) {
         this.hardDrive = hardDrive;
     }
+
     public void setScreenDiagonal(double screenDiagonal) {
         this.screenDiagonal = screenDiagonal;
     }
+
     public void setBattery(int battery) {
         this.battery = battery;
     }
+
     public void setYearOfManufacture(int yearOfManufacture) {
         this.yearOfManufacture = yearOfManufacture;
     }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public void setOperatingSystem(String operatingSystem) {
         this.operatingSystem = operatingSystem;
     }
@@ -141,17 +181,18 @@ class Laptop {
     @Override
     public String toString() {
         return "Ноутбук - " + model + "\n"
-        + "Фирма - " + firm + "\n"
-        + "Процессор - " + CPU + "\n"
-        + "Видеокарта - " + videoCard + "\n"
-        + "Цвет - " + color + "\n"
-        + "Страна изготовления - " + countryOfManufacture + "\n"
-        + "Оперативная память - " + RAM + " гб.\n"
-        + "Объем жесткого диска - " + hardDrive + " гб.\n"
-        + "Диагональ экрана - " + screenDiagonal + " д.\n"
-        + "Батарея - " + battery + " Вт*ч\n"
-        + "Год изготовления - " + yearOfManufacture + " г.\n"
-        + "Операционная система - " + operatingSystem;
+                + "Фирма - " + firm + "\n"
+                + "Процессор - " + CPU + "\n"
+                + "Видеокарта - " + videoCard + "\n"
+                + "Цвет - " + color + "\n"
+                + "Страна изготовления - " + countryOfManufacture + "\n"
+                + "Оперативная память - " + RAM + " гб.\n"
+                + "Объем жесткого диска - " + hardDrive + " гб.\n"
+                + "Диагональ экрана - " + screenDiagonal + " д.\n"
+                + "Батарея - " + battery + " Вт*ч\n"
+                + "Год изготовления - " + yearOfManufacture + " г.\n"
+                + "Операционная система - " + operatingSystem + "\n"
+                + "Цена - " + price + "р.";
     }
 
     @Override
@@ -164,45 +205,77 @@ class Laptop {
         }
         Laptop laptop = (Laptop) l;
         return firm.equals(laptop.firm) &&
-        CPU.equals(laptop.CPU) &&
-        videoCard.equals(laptop.videoCard) &&
-        color.equals(laptop.color) &&
-        countryOfManufacture.equals(laptop.countryOfManufacture) &&
-        RAM == laptop.RAM &&
-        hardDrive == laptop.hardDrive &&
-        screenDiagonal == laptop.screenDiagonal &&
-        battery == laptop.battery &&
-        yearOfManufacture == laptop.yearOfManufacture &&
-        operatingSystem.equals(laptop.operatingSystem);
+                CPU.equals(laptop.CPU) &&
+                videoCard.equals(laptop.videoCard) &&
+                color.equals(laptop.color) &&
+                countryOfManufacture.equals(laptop.countryOfManufacture) &&
+                RAM == laptop.RAM &&
+                hardDrive == laptop.hardDrive &&
+                screenDiagonal == laptop.screenDiagonal &&
+                battery == laptop.battery &&
+                yearOfManufacture == laptop.yearOfManufacture &&
+                price == laptop.price &&
+                operatingSystem.equals(laptop.operatingSystem);
     }
-    
+
     @Override
     public int hashCode() {
-            return Objects.hash(firm, CPU, videoCard, color, countryOfManufacture, RAM, hardDrive, screenDiagonal, battery, yearOfManufacture, operatingSystem);
-        }
+        return Objects.hash(firm, CPU, videoCard, color, countryOfManufacture, RAM, hardDrive, screenDiagonal, battery,
+                yearOfManufacture, price, operatingSystem);
     }
+}
+
 public class Task1 {
     public static void main(String[] args) {
-        Laptop laptop1 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China", "DEXP Aquilon",8 , 128, 14.1, 37, 2022, "Windows 11 Pro");
-        Laptop laptop2 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China", "GIGABYTE G5 MF", 16, 512,  15.6, 54, 2023);
-        Laptop laptop3 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China", "ASUS Vivobook X1704ZA-AU123", 16, 512, 17, 50, 2023, "Windows 10");
-        Laptop laptop4 = new Laptop("Fujitsu", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "Japan", "Fujitsu LIFEBOOK E5412", 32, 4096, 14, 60, 2021, "Windows 11");
-        Laptop laptop5 = new Laptop("Apple", "Apple M1", "Apple M1 7-core", "Gray", "USA", "Apple MacBook Air", 8, 256, 13.3, 49.9, 2022, "macOS");
+        Laptop laptop1 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China",
+                "DEXP Aquilon", 8, 128, 14.1, 37, 2022, 20199, "Windows 11 Pro");
+        Laptop laptop2 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China",
+                "GIGABYTE G5 MF", 16, 512, 15.6, 54, 2023, 79999);
+        Laptop laptop3 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China",
+                "ASUS Vivobook X1704ZA-AU123", 16, 512, 17, 50, 2023, 58999, "Windows 10");
+        Laptop laptop4 = new Laptop("Fujitsu", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "Japan",
+                "Fujitsu LIFEBOOK E5412", 32, 4096, 14, 60, 2021, 136300, "Windows 11");
+        Laptop laptop5 = new Laptop("Apple", "Apple M1", "Apple M1 7-core", "Gray", "USA", "Apple MacBook Air", 8, 256,
+                13.3, 49.9, 2022, 95699, "macOS");
 
-        Laptop laptop6 = new Laptop("Fujitsu", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "Japan", "Fujitsu LIFEBOOK E5412", 32, 4096, 14, 60, 2021, "Windows 11");
-        Laptop laptop7 = new Laptop("Apple", "Apple M1", "Apple M1 7-core", "Gray", "USA", "Apple MacBook Air", 8, 256, 13.3, 49.9, 2022, "macOS");
-        Laptop laptop8 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China", "DEXP Aquilon",8 , 128, 14.1, 37, 2022, "Windows 11 Pro");
-        Laptop laptop9 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China", "GIGABYTE G5 MF", 16, 512,  15.6, 54, 2023);
-        Laptop laptop10 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China", "ASUS Vivobook X1704ZA-AU123", 16, 512, 17, 50, 2023, "Windows 10");
+        Laptop laptop6 = new Laptop("Fujitsu", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "Japan",
+                "Fujitsu LIFEBOOK E5412", 32, 4096, 14, 60, 2021, 136300, "Windows 11");
+        Laptop laptop7 = new Laptop("Apple", "Apple M1", "Apple M1 7-core", "Gray", "USA", "Apple MacBook Air", 8, 256,
+                13.3, 49.9, 2022, 95699, "macOS");
+        Laptop laptop8 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China",
+                "DEXP Aquilon", 8, 128, 14.1, 37, 2022, 20199, "Windows 11 Pro");
+        Laptop laptop9 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China",
+                "GIGABYTE G5 MF", 16, 512, 15.6, 54, 2023, 79999);
+        Laptop laptop10 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China",
+                "ASUS Vivobook X1704ZA-AU123", 16, 512, 17, 50, 2023, 58999, "Windows 10");
 
-        HashSet<Laptop> laptops = new HashSet<Laptop>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5, laptop6, laptop7, laptop8, laptop9, laptop10));
+        HashSet<Laptop> laptops = new HashSet<Laptop>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5,
+                laptop6, laptop7, laptop8, laptop9, laptop10));
         Scanner choiceSc = new Scanner(System.in);
         Scanner findUse = new Scanner(System.in);
         Scanner choiseScTwo = new Scanner(System.in);
+        Scanner getError = new Scanner(System.in);
         boolean choiceError = true;
         int countFind = 0;
+        Map<Integer, String> criterias = new HashMap<Integer, String>();
+        criterias.put(1, "Фирма");
+        criterias.put(2, "Процессор");
+        criterias.put(3, "Видеокарта");
+        criterias.put(4, "Цвет");
+        criterias.put(5, "Страна изготовления");
+        criterias.put(6, "Модель ноутбука");
+        criterias.put(7, "ОЗУ");
+        criterias.put(8, "Размер жесткого диска");
+        criterias.put(9, "Диагональ экрана");
+        criterias.put(10, "Емкость аккамулятора");
+        criterias.put(11, "Год изготовления");
+        criterias.put(12, "Операционная система");
+        criterias.put(13, "Цена");
         while (choiceError) {
-            System.out.println("По какому критерию хотите производить поиск? \n1 - Фирма\n2 - Процессор\n3 - Видеокарта\n4 - Цвет\n5 - Страна изготовления\n6 - Модель ноутбука\n7 - ОЗУ\n8 - Размер жесткого диска\n9 - Диагональ экрана\n10 Емкость аккамулятора\n11 - Год изготовления\n12 - Операционная система");
+            System.out.println("По какому критерию хотите производить поиск?");
+            for (Integer criteria : criterias.keySet()) {
+                System.out.println(criteria + " - " + criterias.get(criteria));
+            }
             int choice = choiceSc.nextInt();
             switch (choice) {
                 case 1:
@@ -224,8 +297,8 @@ public class Task1 {
                             }
                         }
                         if (!differend) {
-                            System.out.println(laptop);
-                            System.out.println();
+                            laptops = new HashSet<Laptop>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5,
+                laptop6, laptop7, laptop8, laptop9, laptop10));
                             countFind++;
                         }
                     }
@@ -373,7 +446,8 @@ public class Task1 {
                     int findNum = findUse.nextInt();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большей оперативной памятью, введите 1.");
-                    System.out.println("Чтобы показать результаты с меньшей оперативной памятью, введите любое другое значение.");
+                    System.out.println(
+                            "Чтобы показать результаты с меньшей оперативной памятью, введите любое другое значение.");
                     String choiceFind = choiseScTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
@@ -400,7 +474,8 @@ public class Task1 {
                     findNum = findUse.nextInt();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большим размером жесткого диска, введите 1.");
-                    System.out.println("Чтобы показать результаты с меньшим размером жесткого диска, введите любое другое значение.");
+                    System.out.println(
+                            "Чтобы показать результаты с меньшим размером жесткого диска, введите любое другое значение.");
                     choiceFind = choiseScTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
@@ -427,7 +502,8 @@ public class Task1 {
                     double findDouble = findUse.nextDouble();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большим размером диагонали, введите 1.");
-                    System.out.println("Чтобы показать результаты с меньшим размером диагонали, введите любое другое значение.");
+                    System.out.println(
+                            "Чтобы показать результаты с меньшим размером диагонали, введите любое другое значение.");
                     choiceFind = choiseScTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
@@ -454,7 +530,8 @@ public class Task1 {
                     findDouble = findUse.nextDouble();
                     System.out.println();
                     System.out.println("Чтобы показать результаты с большей емкостью аккамулятора, введите 1.");
-                    System.out.println("Чтобы показать результаты с меньшей емкостью аккамулятора, введите любое другое значение.");
+                    System.out.println(
+                            "Чтобы показать результаты с меньшей емкостью аккамулятора, введите любое другое значение.");
                     choiceFind = choiseScTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
@@ -482,7 +559,8 @@ public class Task1 {
                     System.out.println();
                     System.out.println("Чтобы показать более новые модели, введите 1.");
                     System.out.println("Чтобы показать более старые модели, введите 2");
-                    System.out.println("Чтобы показать модели только необходимового вам года, введите любое другое значение");
+                    System.out.println(
+                            "Чтобы показать модели только необходимового вам года, введите любое другое значение");
                     choiceFind = choiseScTwo.nextLine();
                     if (choiceFind.equals("1")) {
                         for (Laptop laptop : laptops) {
@@ -514,8 +592,10 @@ public class Task1 {
                     break;
                 case 12:
                     System.err.println("Введите название операционной системы:");
-                    System.out.println("(Чтобы произвести поиск всех ноутбуков без установленной операционной системой, введите null)");
-                    System.out.println("(Чтобы произвести поиск всех ноутбуков с установленной операционной системой, введите all)");
+                    System.out.println(
+                            "(Чтобы произвести поиск всех ноутбуков без установленной операционной системой, введите null)");
+                    System.out.println(
+                            "(Чтобы произвести поиск всех ноутбуков с установленной операционной системой, введите all)");
                     find = findUse.nextLine();
                     System.out.println();
                     find = find.toLowerCase();
@@ -556,14 +636,50 @@ public class Task1 {
                     System.out.println("Найдено резултатов - " + countFind);
                     choiceError = false;
                     break;
-            
-                default:
-                    System.out.println("Ошибка! Пожалуйста выберите один из указанных критериев поиска!\n\n");
+                case 13:
+                    System.err.println("Введите цену ноутбука:");
+                    findNum = findUse.nextInt();
+                    System.out.println();
+                    System.out.println("Чтобы показать результаты с большим ценовым диапазоном, введите 1.");
+                    System.out.println("Чтобы показать результаты с меньшим ценовым диапазоном, введите любое другое значение.");
+                    choiceFind = choiseScTwo.nextLine();
+                    if (choiceFind.equals("1")) {
+                        for (Laptop laptop : laptops) {
+                            if (laptop.getPrice() >= findNum) {
+                                System.out.println(laptop);
+                                System.out.println();
+                                countFind++;
+                            }
+                        }
+                    } else {
+                        for (Laptop laptop : laptops) {
+                            if (laptop.getPrice() <= findNum) {
+                                System.out.println(laptop);
+                                System.out.println();
+                                countFind++;
+                            }
+                        }
+                    }
+                    choiceError = false;
+                    System.out.println("Найдено резултатов - " + countFind);
                     break;
+                default:
+                    System.out.println("Ошибка! Пожалуйста выберите один из указанных критериев поиска!");
+                    String getErrorInput = getError.nextLine();
+                    break;
+            }
         }
-        }
+        getError.close();
         choiseScTwo.close();
         choiceSc.close();
         findUse.close();
+
+        // int count = 0;
+        // for (Laptop laptop : laptops) {
+        // System.out.println(laptop);
+        // System.out.println();
+        // count++;
+        // }
+        // System.out.println(count);
     }
 }
