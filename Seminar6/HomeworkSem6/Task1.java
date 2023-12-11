@@ -41,8 +41,7 @@ public class Task1 {
         return criteriasNew;
     }
     public static void main(String[] args) {
-        Laptop laptop1 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China",
-                "DEXP Aquilon", 8, 128, 14.1, 37, 2022, 20199, "Windows 11 Pro");
+        Laptop laptop1 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China", "DEXP Aquilon", 8, 128, 14.1, 37, 2022, 20199, "Windows 11 Pro");
         Laptop laptop2 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China",
                 "GIGABYTE G5 MF", 16, 512, 15.6, 54, 2023, 79999);
         Laptop laptop3 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China",
@@ -566,7 +565,7 @@ public class Task1 {
             System.out.println(laptop);
             System.out.println();
         }
-        System.out.println("Найдено резултатов - " + countFind);
+        System.out.println("Найдено результатов - " + countFind);
         getError.close();
         choiseTwo.close();
         choiceSc.close();
