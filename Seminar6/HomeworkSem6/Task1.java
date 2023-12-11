@@ -42,28 +42,18 @@ public class Task1 {
     }
     public static void main(String[] args) {
         Laptop laptop1 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China", "DEXP Aquilon", 8, 128, 14.1, 37, 2022, 20199, "Windows 11 Pro");
-        Laptop laptop2 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China",
-                "GIGABYTE G5 MF", 16, 512, 15.6, 54, 2023, 79999);
-        Laptop laptop3 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China",
-                "ASUS Vivobook X1704ZA-AU123", 16, 512, 17, 50, 2023, 58999, "Windows 10");
-        Laptop laptop4 = new Laptop("Fujitsu", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "Japan",
-                "Fujitsu LIFEBOOK E5412", 32, 4096, 14, 60, 2021, 136300, "Windows 11");
-        Laptop laptop5 = new Laptop("Apple", "Apple M1", "Apple M1 7-core", "Gray", "USA", "Apple MacBook Air", 8, 256,
-                13.3, 49.9, 2022, 95699, "macOS");
+        Laptop laptop2 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China", "GIGABYTE G5 MF", 16, 512, 15.6, 54, 2023, 79999);
+        Laptop laptop3 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China", "ASUS Vivobook X1704ZA-AU123", 16, 512, 17, 50, 2023, 58999, "Windows 10");
+        Laptop laptop4 = new Laptop("Fujitsu", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "Japan", "Fujitsu LIFEBOOK E5412", 32, 4096, 14, 60, 2021, 136300, "Windows 11");
+        Laptop laptop5 = new Laptop("Apple", "Apple M1", "Apple M1 7-core", "Gray", "USA", "Apple MacBook Air", 8, 256, 13.3, 49.9, 2022, 95699, "macOS");
 
-        Laptop laptop6 = new Laptop("Fujitsu", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "Japan",
-                "Fujitsu LIFEBOOK E5412", 32, 4096, 14, 60, 2021, 136300, "Windows 11");
-        Laptop laptop7 = new Laptop("Apple", "Apple M1", "Apple M1 7-core", "Gray", "USA", "Apple MacBook Air", 8, 256,
-                13.3, 49.9, 2022, 95699, "macOS");
-        Laptop laptop8 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China",
-                "DEXP Aquilon", 8, 128, 14.1, 37, 2022, 20199, "Windows 11 Pro");
-        Laptop laptop9 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China",
-                "GIGABYTE G5 MF", 16, 512, 15.6, 54, 2023, 79999);
-        Laptop laptop10 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China",
-                "ASUS Vivobook X1704ZA-AU123", 16, 512, 17, 50, 2023, 58999, "Windows 10");
+        Laptop laptop6 = new Laptop("Fujitsu", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "Japan", "Fujitsu LIFEBOOK E5412", 32, 4096, 14, 60, 2021, 136300, "Windows 11");
+        Laptop laptop7 = new Laptop("Apple", "Apple M1", "Apple M1 7-core", "Gray", "USA", "Apple MacBook Air", 8, 256, 13.3, 49.9, 2022, 95699, "macOS");
+        Laptop laptop8 = new Laptop("DEXP", "Intel Celeron N4020", "Intel UHD Graphics 600", "Silver", "China", "DEXP Aquilon", 8, 128, 14.1, 37, 2022, 20199, "Windows 11 Pro");
+        Laptop laptop9 = new Laptop("GIGABYTE", "Intel Core i5-12500H", "Intel Iris Xe Graphics", "Black", "China", "GIGABYTE G5 MF", 16, 512, 15.6, 54, 2023, 79999);
+        Laptop laptop10 = new Laptop("ASUS", "Intel Core i5-1235U", "Intel Iris Xe Graphics", "Blue", "China", "ASUS Vivobook X1704ZA-AU123", 16, 512, 17, 50, 2023, 58999, "Windows 10");
 
-        HashSet<Laptop> laptops = new HashSet<Laptop>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5,
-                laptop6, laptop7, laptop8, laptop9, laptop10));
+        HashSet<Laptop> laptops = new HashSet<Laptop>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5, laptop6, laptop7, laptop8, laptop9, laptop10));
         Scanner choiceSc = new Scanner(System.in);
         Scanner findUse = new Scanner(System.in);
         Scanner choiseTwo = new Scanner(System.in);
@@ -566,6 +556,7 @@ public class Task1 {
             System.out.println();
         }
         System.out.println("Найдено результатов - " + countFind);
+        next.close();
         getError.close();
         choiseTwo.close();
         choiceSc.close();
