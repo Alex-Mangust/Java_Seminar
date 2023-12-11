@@ -3,23 +3,21 @@ package Seminar6.HomeworkSem6;
 import java.util.Objects;
 
 public class Laptop {
-    String firm;
-    String CPU;
-    String videoCard;
-    String color;
-    String countryOfManufacture;
-    String operatingSystem;
-    int RAM;
-    int hardDrive;
-    double screenDiagonal;
-    double battery;
-    int yearOfManufacture;
-    int price;
-    String model;
+    private String firm;
+    private String CPU;
+    private String videoCard;
+    private String color;
+    private String countryOfManufacture;
+    private String operatingSystem;
+    private int RAM;
+    private int hardDrive;
+    private double screenDiagonal;
+    private double battery;
+    private int yearOfManufacture;
+    private int price;
+    private String model;
 
-    Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM,
-            int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, int price,
-            String operatingSystem) {
+    public Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM, int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, int price, String operatingSystem) {
         this.firm = firm;
         this.CPU = CPU;
         this.videoCard = videoCard;
@@ -35,8 +33,7 @@ public class Laptop {
         this.operatingSystem = operatingSystem;
     }
 
-    Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM,
-            int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, int price) {
+    public Laptop(String firm, String CPU, String videoCard, String color, String countryOfManufacture, String model, int RAM, int hardDrive, double screenDiagonal, double battery, int yearOfManufacture, int price) {
         this.firm = firm;
         this.CPU = CPU;
         this.videoCard = videoCard;
